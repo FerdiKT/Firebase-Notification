@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Htp-nA-9rF">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="iQx-tt-dHr">
+            <objects>
+                <viewController storyboardIdentifier="signInView" id="Wre-Bq-prk" customClass="SignInViewController" customModule="Firebase_Notification" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c2b-qG-f0a"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZHV-HF-snY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DMc-Hz-3fs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YtT-MF-Qic" customClass="GIDSignInButton">
+                                <rect key="frame" x="20" y="101" width="560" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YtT-MF-Qic" firstAttribute="trailing" secondItem="DMc-Hz-3fs" secondAttribute="trailingMargin" id="KcD-OV-9pN"/>
+                            <constraint firstItem="ZHV-HF-snY" firstAttribute="top" secondItem="YtT-MF-Qic" secondAttribute="bottom" constant="449" id="atz-5b-231"/>
+                            <constraint firstItem="YtT-MF-Qic" firstAttribute="top" secondItem="c2b-qG-f0a" secondAttribute="bottom" constant="81" id="hzu-GA-t0L"/>
+                            <constraint firstItem="YtT-MF-Qic" firstAttribute="leading" secondItem="DMc-Hz-3fs" secondAttribute="leadingMargin" id="mvg-dl-g7Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mix-aX-RTQ"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="conditionView" id="uvb-mB-aWW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1B-V0-5bZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="236"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="conditionView" id="BYZ-38-t0r" customClass="ViewController" customModule="Firebase_Notification" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIS-jb-dHJ">
+                                <rect key="frame" x="279" y="200" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wot-kn-1OV">
+                                <rect key="frame" x="20" y="311" width="101" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="FpK-Cv-r1r"/>
+                                </constraints>
+                                <state key="normal" title="Sunny"/>
+                                <connections>
+                                    <action selector="SunnyDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SOe-pv-Jby"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHw-Sd-7WO">
+                                <rect key="frame" x="479" y="311" width="101" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="kG8-Iy-6No"/>
+                                </constraints>
+                                <state key="normal" title="Foggy"/>
+                                <connections>
+                                    <action selector="FoggyDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zFQ-QH-vtH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5X-WF-nKw">
+                                <rect key="frame" x="436" y="310" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wot-kn-1OV" secondAttribute="bottom" constant="223" id="7AM-Xh-s37"/>
+                            <constraint firstItem="Wot-kn-1OV" firstAttribute="top" secondItem="zHw-Sd-7WO" secondAttribute="top" id="7QO-JS-gxn"/>
+                            <constraint firstItem="Wot-kn-1OV" firstAttribute="baseline" secondItem="P5X-WF-nKw" secondAttribute="baseline" id="7vs-SG-kNR"/>
+                            <constraint firstItem="zHw-Sd-7WO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9Uj-Ui-yIV"/>
+                            <constraint firstItem="Wot-kn-1OV" firstAttribute="baseline" secondItem="zHw-Sd-7WO" secondAttribute="firstBaseline" id="C5T-eN-u6L"/>
+                            <constraint firstItem="VIS-jb-dHJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GCD-JQ-HaU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P5X-WF-nKw" secondAttribute="trailing" constant="98" id="aaX-V2-OCP"/>
+                            <constraint firstItem="VIS-jb-dHJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="136" id="diP-nE-HYk"/>
+                            <constraint firstItem="Wot-kn-1OV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g7x-45-nMZ"/>
+                            <constraint firstItem="Wot-kn-1OV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="247" id="isl-E7-471"/>
+                            <constraint firstItem="zHw-Sd-7WO" firstAttribute="baseline" secondItem="Wot-kn-1OV" secondAttribute="firstBaseline" id="opH-Pp-7h3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="P5X-WF-nKw"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="I58-Xr-EC5">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="1mh-OD-IVQ">
+                            <connections>
+                                <action selector="logOut:" destination="BYZ-38-t0r" id="g65-wm-4VV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="conditionLabel" destination="VIS-jb-dHJ" id="CrB-Pe-qYi"/>
+                        <outlet property="logOut" destination="1mh-OD-IVQ" id="9JV-xZ-CGu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="236"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RkD-SJ-62w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Htp-nA-9rF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V3s-qK-q79">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wre-Bq-prk" kind="relationship" relationship="rootViewController" id="vfw-sv-aSf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdb-KP-qc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9" y="236"/>
+        </scene>
+    </scenes>
+</document>
